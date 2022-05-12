@@ -1,13 +1,23 @@
+// importing Math to use Math.random function for computer turn calculation
 import java.lang.Math;
+// importing Scanner so that user input can be collected
 import java.util.*;
 
 public class RockPaperScissors{
-    double compRoll = Math.random();
+	
+// compRoll is used to randomly generate a value for the computer turn calculation	
+  double compRoll = Math.random();
+	
+// scan is the Scanner object for collecting user input
   Scanner scan = new Scanner(System.in);
+
   String playerChoice;
   String compChoice;
   String outcome;
 
+/* Since Math.random generates a value between 0 and 1 the numberAssign function evaluates the possible 
+values and then assigns them to Rock, Paper, or Scissors based off where they fall in that spectrum using 
+conditional logic */
   public void numberAssign(){
     if (compRoll <= 0.33)
       compChoice = "Rock";
@@ -17,13 +27,16 @@ public class RockPaperScissors{
       compChoice = "Scissors";
   }
 
+/* playerTurn prompts the user to provide an input and then assigns the Scanner input to the 
+playerChoice String */
   public void playerTurn(){
     System.out.println("Please enter Rock, Paper, or Scissors");
     playerChoice = scan.next();
     scan.close();
-   
   }
 
+/* The battleSim function is a 9-way conditional that compares all possible combinations of playerChoice and compChoice
+and then sets the outcome String based on the criteria */
   public void battleSim(){
     if 
       (playerChoice.equals("Rock") && compChoice.equals("Rock"))
@@ -56,8 +69,9 @@ public class RockPaperScissors{
         outcome = "Outcome cannot be determined, player provided invalid input";
     }
 	
-	  public static void main(String[] args){
+	public static void main(String[] args){
 
+// Instantiating the RockPaperScissors game object 
     RockPaperScissors RockPaperScissors = new RockPaperScissors();
 
     System.out.println("<==================>");
