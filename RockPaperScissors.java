@@ -35,17 +35,11 @@ playerChoice String */
     scan.close();
   }
 
-/* The battleSim function is a 9-way conditional that compares all possible combinations of playerChoice and compChoice
+/* The battleSim function is a 8 way conditional that compares all possible combinations of playerChoice and compChoice
 and then sets the outcome String based on the criteria */
   public void battleSim(){
     if 
-      (playerChoice.equals("Rock") && compChoice.equals("Rock"))
-        outcome = "Draw";
-    else if 
-      (playerChoice.equals("Scissors") &&     compChoice.equals("Scissors"))
-        outcome = "Draw";
-    else if 
-      (playerChoice.equals("Paper") && compChoice.equals("Paper"))
+      (playerChoice.equals(compChoice))
         outcome = "Draw";
     else if 
       (playerChoice.equals("Paper") && compChoice.equals("Rock"))
